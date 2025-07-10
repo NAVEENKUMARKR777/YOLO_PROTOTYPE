@@ -345,6 +345,28 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 For support, email support@yolo-need-app.com or join our Discord community.
 
+## 📈 Roadmap
+
+### Version 1.1 (Q3 2025)
+- [ ] Advanced AI features
+- [ ] Multi-language support
+- [ ] Enhanced gamification
+- [ ] Performance optimizations
+
+### Version 1.2 (Q3 2025)
+- [ ] Offline mode
+- [ ] Advanced analytics
+- [ ] API integrations
+- [ ] Mobile-specific features
+
+### Version 2.0 (Q4 2025)
+- [ ] Blockchain integration
+- [ ] Advanced security features
+- [ ] Enterprise features
+- [ ] White-label solution
+
 ---
 
-**Built with ❤️ using Flutter and Azure** 
+**Made with ❤️ by the YOLO Need App Team**
+
+*Empowering communities through AI-powered need matching and gamified engagement.*
