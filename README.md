@@ -340,7 +340,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📈 Roadmap
 
-### Version 1.1 (Q2 2025)
+### Version 1.1 (Q3 2025)
 - [ ] Advanced AI features
 - [ ] Multi-language support
 - [ ] Enhanced gamification
