@@ -1,0 +1,178 @@
+---
+
+### ✅ FULL PROJECT GENERATION PROMPT FOR CURSOR AI IDE:
+
+---
+
+**Prompt:**
+
+> Build a full-featured, production-ready Flutter application named `YOLO Need App`. The app must work on Android, iOS, Web, Windows, macOS, and Linux platforms. It is a role-based, AI-powered community platform for need capture, collaboration, support, and gamified engagement.
+>
+> Use **only Flutter and Dart**. Use **Microsoft Azure** cloud services (no Google tech stack). Implement the following structure, functionality, and integrations.
+>
+> ---
+>
+> ### 🌍 General Requirements:
+>
+> * Cross-platform support: Android, iOS, Web, Windows, macOS, Linux
+> * Role-based UI: Seeker, Helper, Admin, Business
+> * Authentication: Azure AD B2C (OAuth2) with role-based access
+> * Responsive UI & Material Design 3
+> * Dark Mode toggle
+> * Support for voice, text, and image input
+> * Use BLoC or Riverpod for state management
+>
+> ---
+>
+> ### 📁 Project Structure:
+>
+> ```
+> /lib
+> ├── /screens
+> │   ├── /auth
+> │   ├── /home
+> │   ├── /need
+> │   ├── /chat
+> │   ├── /profile
+> │   ├── /admin
+> │   └── /review
+> ├── /services/azure
+> │   ├── azure_auth.dart
+> │   ├── azure_cosmos.dart
+> │   ├── azure_ai_chat.dart
+> │   ├── azure_blob_storage.dart
+> │   ├── azure_calendar.dart
+> │   ├── azure_vision.dart
+> ├── /widgets
+> ├── /models
+> ├── /providers
+> └── main.dart
+> ```
+>
+> ---
+>
+> ### 📲 Core Screens:
+>
+> * SplashScreen: Logo, loader, version check
+> * Login/Register: Azure AD B2C, phone/email
+> * Home Dashboard: Summary of active needs, bottom nav, user-specific stats
+> * Capture Need: Text/voice/image input, barcode scanning (via Azure Custom Vision)
+> * Need Timeline: Track status, show steps, alerts
+> * Chat/Expert Help: AI + human chat using Azure Bot Framework + OpenAI GPT-4
+> * Community Feed: Cards for trending needs, responses
+> * Review Panel: For admins/helpers to categorize and validate needs
+> * Profile: Role-specific (User/Business/Service), editable
+> * Admin Panel: Analytics, user controls, content moderation
+> * Gamification: Missions, badges, leaderboard (YOLO Warrior system)
+> * Notifications: Push (via Azure Notification Hubs), in-app
+> * Settings: Dark mode, language, privacy toggle
+>
+> ---
+>
+> ### 🧠 AI Features:
+>
+> * Smart need suggestions using Azure OpenAI GPT-4
+> * Voice input via Azure Speech-to-Text
+> * Image & barcode recognition via Azure Custom Vision
+> * Contextual search using Azure Cognitive Search
+> * Sentiment analysis using Azure AI Language
+> * Recommender engine using Azure ML and Synapse
+>
+> ---
+>
+> ### ☁ Azure Integration (Service Layer):
+>
+> 1. `azure_auth.dart`
+>
+>    * Sign in/up using Azure AD B2C
+>    * Role-based access with claim parsing
+> 2. `azure_cosmos.dart`
+>
+>    * CRUD for users, needs, chats, feedback, missions
+>    * Real-time sync via SignalR or polling
+> 3. `azure_ai_chat.dart`
+>
+>    * Connect to Azure OpenAI for GPT-based chat
+>    * Bot+human hybrid chat logic
+> 4. `azure_blob_storage.dart`
+>
+>    * Upload/download images, documents
+>    * Bucket path structure: `/need_images/`, `/proof_docs/`
+> 5. `azure_calendar.dart`
+>
+>    * Manage appointments via Microsoft Graph API
+>    * Reminders and scheduling
+> 6. `azure_vision.dart`
+>
+>    * Analyze uploaded images using Azure Vision
+>    * Extract text (OCR), barcode, labels
+>
+> ---
+>
+> ### 📈 Analytics & Insights:
+>
+> * Use Azure Application Insights to log key events
+> * Power BI Embedded dashboard for admins
+>
+> ---
+>
+> ### 🔐 Security & Compliance:
+>
+> * Azure AD B2C for secure auth
+> * Azure Confidential Ledger or Access Policies
+> * Role-based UI routing using Flutter Navigator 2.0
+>
+> ---
+>
+> ### 🧭 Navigation Flow:
+>
+> ```
+> SplashScreen
+> └── Login/Register
+>     └── HomeDashboard
+>         ├── CaptureNeed
+>         ├── CommunityFeed
+>         ├── Chat
+>         ├── NeedTimeline
+>         ├── Profile
+>         ├── AdminPanel (role = admin)
+>         └── Gamification
+> ```
+>
+> Use `go_router` or `auto_route` for structured navigation.
+>
+> ---
+>
+> ### 🔔 Notifications:
+>
+> * Use Azure Notification Hubs
+> * Topic-based alerts: need-updates, mission-unlock, admin-broadcasts
+>
+> ---
+>
+> ### 🎮 Gamification Engine:
+>
+> * Points and badges for contributions
+> * Daily/weekly missions
+> * Leaderboard using Cosmos DB + Power BI
+>
+> ---
+>
+> ### 🔧 Optional Plugins:
+>
+> * `speech_to_text` (Azure wrapper)
+> * `flutter_secure_storage`
+> * `http` / `dio`
+> * `camera`, `image_picker`
+> * `rive`, `fl_chart`, `badges`, `animations`
+>
+> ---
+>
+> ### 📋 Final Notes:
+>
+> * All backend logic must connect to Microsoft Azure
+> * No Firebase or Google APIs
+> * Prioritize modular, testable, scalable code
+> * Prepare for deployment to all platforms with CI-ready structure
+
+---
