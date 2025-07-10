@@ -1,8 +1,16 @@
 # YOLO Need App 🚀
 
-A full-featured, production-ready Flutter application that serves as a role-based, AI-powered community platform for need capture, collaboration, support, and gamified engagement.
+A full-featured, production-ready Flutter application that serves as a role-based, AI-powered community platform for need capture, collaboration, support, and gamified engagement. Now enhanced with a comprehensive **RAG (Retrieval Augmented Generation)** system for intelligent knowledge management and enhanced AI responses.
 
 ## 🌟 Features
+
+### 🧠 RAG-Powered AI System
+- **Three-Layer RAG Architecture** - Vector Store → AI Foundry → Graph RAG
+- **Semantic Search** - Advanced knowledge base search with relevance scoring
+- **Knowledge Graphs** - Graph-based reasoning for contextual understanding
+- **Structured Answers** - High-quality AI responses with confidence metrics
+- **Content Indexing** - Automatic knowledge base updates and maintenance
+- **RAG Dashboard** - Comprehensive system monitoring and management
 
 ### 🤖 AI-Powered Capabilities
 - **Smart Need Categorization** - Uses Azure Vision + Custom Vision for automatic categorization
@@ -11,6 +19,7 @@ A full-featured, production-ready Flutter application that serves as a role-base
 - **Barcode Scanning** - Product identification and categorization
 - **Sentiment Analysis** - Analyze emotional tone in user interactions
 - **Contextual Search** - Intelligent search using Azure Cognitive Search
+- **Enhanced Chat** - RAG-powered AI responses with source citations
 
 ### 👥 Role-Based System
 - **Seeker** - Post needs and receive help from the community
@@ -47,6 +56,30 @@ A full-featured, production-ready Flutter application that serves as a role-base
 
 ## 🏗️ Architecture
 
+### RAG System Architecture
+```
+┌─────────────────────────────────────────────────────────┐
+│                    UI Layer                            │
+│  🎨 RAG Dashboard • Semantic Search • Enhanced Chat   │
+└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│                State Management                        │
+│  🔄 Riverpod Providers • RAG System State            │
+└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│              Layer 3: Graph RAG                       │
+│  🧠 Context Reasoning • Structured Answer Generation  │
+└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│            Layer 2: Azure AI Foundry                  │
+│  🤖 Query Understanding • Contextual Enrichment       │
+└─────────────────────────────────────────────────────────┘
+┌─────────────────────────────────────────────────────────┐
+│              Layer 1: Vector Store                    │
+│  📊 Vectorization • Semantic Retrieval                │
+└─────────────────────────────────────────────────────────┘
+```
+
 ### Project Structure
 ```
 /lib
@@ -57,11 +90,24 @@ A full-featured, production-ready Flutter application that serves as a role-base
 │   ├── /chat          # AI and human chat
 │   ├── /profile       # User profiles and settings
 │   ├── /admin         # Administrative tools
-│   └── /review        # Rating and review system
+│   ├── /review        # Rating and review system
+│   └── /rag           # RAG system dashboard
 ├── /services/azure    # Azure cloud services integration
-├── /models           # Data models
-├── /providers        # State management (Riverpod)
-├── /widgets          # Reusable UI components
+│   ├── azure_embeddings.dart      # Vector embeddings
+│   ├── azure_vector_database.dart # Vector storage
+│   ├── azure_ai_foundry.dart      # Query understanding
+│   ├── azure_graph_rag.dart       # Graph reasoning
+│   └── azure_ai_chat.dart         # Enhanced chat
+├── /models
+│   ├── vector_store_model.dart    # Vector store models
+│   └── graph_rag_model.dart       # Graph RAG models
+├── /providers
+│   └── rag_provider.dart          # RAG state management
+├── /widgets
+│   └── /rag                       # RAG UI components
+│       ├── semantic_search_widget.dart
+│       ├── rag_chat_widget.dart
+│       └── rag_status_widget.dart
 └── main.dart         # App entry point
 ```
 
@@ -74,6 +120,7 @@ A full-featured, production-ready Flutter application that serves as a role-base
 - **Database**: Azure Cosmos DB
 - **Storage**: Azure Blob Storage
 - **AI Services**: Azure OpenAI, Computer Vision, Speech Services
+- **RAG System**: Azure OpenAI Embeddings, Vector Math, Graph Processing
 - **Notifications**: Azure Notification Hubs
 
 ## 🚀 Getting Started
@@ -105,7 +152,7 @@ A full-featured, production-ready Flutter application that serves as a role-base
    - Azure Blob Storage
    - Azure Computer Vision
    - Azure Speech Services
-   - Azure OpenAI
+   - Azure OpenAI (for RAG system)
    - Azure Notification Hubs
 
 4. **Update Configuration**
@@ -116,6 +163,9 @@ A full-featured, production-ready Flutter application that serves as a role-base
    - `lib/services/azure/azure_blob_storage.dart`
    - `lib/services/azure/azure_vision.dart`
    - `lib/services/azure/azure_speech.dart`
+   - `lib/services/azure/azure_embeddings.dart` (RAG)
+   - `lib/services/azure/azure_ai_foundry.dart` (RAG)
+   - `lib/services/azure/azure_graph_rag.dart` (RAG)
    - `lib/services/azure/azure_notifications.dart`
 
 5. **Run the application**
@@ -124,6 +174,14 @@ A full-featured, production-ready Flutter application that serves as a role-base
    ```
 
 ## 📱 Core Features
+
+### RAG System Features
+- **Semantic Search Widget** - Advanced knowledge base search with filters
+- **RAG Chat Widget** - Enhanced AI responses with source citations
+- **RAG Status Widget** - System health monitoring and metrics
+- **RAG Dashboard** - Comprehensive management interface
+- **Content Indexing** - Automatic knowledge base updates
+- **Knowledge Graph Management** - Graph-based reasoning system
 
 ### Authentication & User Management
 - **Multi-factor Authentication** - Phone/email verification
@@ -140,7 +198,7 @@ A full-featured, production-ready Flutter application that serves as a role-base
 ### Community & Collaboration
 - **Community Feed** - Trending needs and responses
 - **Helper Matching** - AI-powered helper recommendations
-- **Chat System** - AI + human hybrid chat support
+- **Chat System** - AI + human hybrid chat support with RAG enhancement
 - **Review System** - Comprehensive rating and feedback
 
 ### Admin & Analytics
@@ -148,6 +206,7 @@ A full-featured, production-ready Flutter application that serves as a role-base
 - **Content Moderation** - Review and approve/reject content
 - **Analytics Dashboard** - Power BI embedded analytics
 - **System Monitoring** - Azure services health and performance
+- **RAG System Management** - Knowledge base administration
 
 ## 🔧 Configuration
 
@@ -183,6 +242,14 @@ static const String _endpoint = 'https://your-speech-resource.cognitiveservices.
 static const String _apiKey = 'your-speech-api-key';
 ```
 
+#### 5. Azure OpenAI (RAG System)
+```dart
+// Configure in azure_embeddings.dart
+static const String _endpoint = 'https://your-openai-resource.openai.azure.com';
+static const String _apiKey = 'your-openai-api-key';
+static const String _deploymentName = 'text-embedding-ada-002';
+```
+
 ### Environment Variables
 Create a `.env` file in the project root:
 ```env
@@ -198,102 +265,62 @@ AZURE_SPEECH_API_KEY=your-speech-api-key
 AZURE_OPENAI_ENDPOINT=your-openai-endpoint
 AZURE_OPENAI_API_KEY=your-openai-api-key
 AZURE_NOTIFICATION_HUB_NAME=your-notification-hub
-AZURE_NOTIFICATION_HUB_CONNECTION_STRING=your-connection-string
 ```
 
-## 🧪 Testing
+## 🧠 RAG System Usage
 
-### Unit Tests
-```bash
-flutter test
+### Accessing the RAG Dashboard
+Navigate to the RAG Dashboard to access all RAG system features:
+- **Overview Tab** - System status, metrics, and quick actions
+- **Search Tab** - Semantic search with advanced filters
+- **Chat Tab** - RAG-enhanced chat interface
+
+### Semantic Search
+```dart
+// Use the semantic search widget
+SemanticSearchWidget(
+  showFilters: true,
+  compactMode: false,
+  onResultSelected: () {
+    // Handle result selection
+  },
+)
 ```
 
-### Widget Tests
-```bash
-flutter test test/widget_test.dart
+### RAG-Enhanced Chat
+```dart
+// Use the RAG chat widget
+RagChatWidget(
+  showRagIndicators: true,
+  enableStructuredAnswers: true,
+  onSourceSelected: () {
+    // Handle source selection
+  },
+)
 ```
 
-### Integration Tests
-```bash
-flutter drive --target=test_driver/app.dart
+### System Status Monitoring
+```dart
+// Monitor RAG system health
+RagStatusWidget(
+  showDetails: true,
+  showQuickActions: true,
+)
 ```
 
-## 📦 Building for Production
+## 📊 Performance & Scalability
 
-### Android
-```bash
-flutter build apk --release
-```
+### RAG System Performance
+- **Vector Search**: Sub-second response times for semantic queries
+- **Knowledge Graph**: Efficient graph traversal and reasoning
+- **Content Indexing**: Background processing for knowledge updates
+- **Memory Management**: Optimized vector storage and retrieval
 
-### iOS
-```bash
-flutter build ios --release
-```
-
-### Web
-```bash
-flutter build web --release
-```
-
-### Windows
-```bash
-flutter build windows --release
-```
-
-### macOS
-```bash
-flutter build macos --release
-```
-
-### Linux
-```bash
-flutter build linux --release
-```
-
-## 🚀 Deployment
-
-### Azure App Service (Web)
-1. Build the web version
-2. Deploy to Azure App Service
-3. Configure custom domain and SSL
-
-### Mobile App Stores
-1. Build platform-specific versions
-2. Follow platform-specific guidelines
-3. Submit to App Store and Google Play
-
-### Desktop Platforms
-1. Build platform-specific versions
-2. Create installers
-3. Distribute through appropriate channels
-
-## 📊 Monitoring & Analytics
-
-### Azure Application Insights
-- Performance monitoring
-- Error tracking
-- User analytics
-- Custom events
-
-### Power BI Dashboard
-- User engagement metrics
-- Need categorization analytics
-- Gamification statistics
-- System health monitoring
-
-## 🔒 Security
-
-### Authentication
-- Azure AD B2C for secure authentication
-- Multi-factor authentication support
-- Role-based access control
-- Secure token management
-
-### Data Protection
-- End-to-end encryption
-- Secure data transmission
-- Privacy-compliant data handling
-- GDPR compliance features
+### Azure Integration
+- **Cosmos DB**: Global distribution with multi-region writes
+- **Blob Storage**: CDN-enabled content delivery
+- **Azure OpenAI**: Scalable AI model inference
+- **Notification Hubs**: Real-time push notifications
 
 ## 🤝 Contributing
 
@@ -303,63 +330,21 @@ flutter build linux --release
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-### Development Guidelines
-- Follow Flutter best practices
-- Use proper error handling
-- Write comprehensive tests
-- Maintain code documentation
-- Follow the existing code style
-
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
-
-### Documentation
-- [Flutter Documentation](https://flutter.dev/docs)
-- [Azure Documentation](https://docs.microsoft.com/azure/)
-- [Riverpod Documentation](https://riverpod.dev/)
-
-### Community
-- [GitHub Issues](https://github.com/your-username/yolo-need-app/issues)
-- [Discord Community](https://discord.gg/your-community)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/yolo-need-app)
-
-### Contact
-- **Email**: support@yolo-need-app.com
-- **Twitter**: [@YOLONeedApp](https://twitter.com/YOLONeedApp)
-- **LinkedIn**: [YOLO Need App](https://linkedin.com/company/yolo-need-app)
-
 ## 🙏 Acknowledgments
 
-- **Flutter Team** - For the amazing framework
-- **Microsoft Azure** - For comprehensive cloud services
-- **Riverpod Team** - For excellent state management
-- **Open Source Community** - For all the amazing packages
+- **Microsoft Azure** for cloud infrastructure and AI services
+- **Flutter Team** for the amazing cross-platform framework
+- **Riverpod** for state management
+- **Community Contributors** for feedback and improvements
 
-## 📈 Roadmap
+## 📞 Support
 
-### Version 1.1 (Q2 2025)
-- [ ] Advanced AI features
-- [ ] Multi-language support
-- [ ] Enhanced gamification
-- [ ] Performance optimizations
-
-### Version 1.2 (Q3 2025)
-- [ ] Offline mode
-- [ ] Advanced analytics
-- [ ] API integrations
-- [ ] Mobile-specific features
-
-### Version 2.0 (Q4 2025)
-- [ ] Blockchain integration
-- [ ] Advanced security features
-- [ ] Enterprise features
-- [ ] White-label solution
+For support, email support@yolo-need-app.com or join our Discord community.
 
 ---
 
-**Made with ❤️ by the YOLO Need App Team**
-
-*Empowering communities through AI-powered need matching and gamified engagement.* 
+**Built with ❤️ using Flutter and Azure** 
